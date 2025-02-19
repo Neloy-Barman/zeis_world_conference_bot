@@ -9,8 +9,18 @@ from tqdm import tqdm
 # Reading CSV file
 
 # Dynamic
+
+# # Keynote Speakers
 # df = pd.read_csv("Content_Sheets/Mannually_Processed/Keynote_Speakers.csv")
-df = pd.read_csv("Content_Sheets/Mannually_Processed/Guest_of_Honour.csv")
+
+# # Guest of Honour
+# df = pd.read_csv("Content_Sheets/Mannually_Processed/Guest_of_Honour.csv")
+
+# # Founder Info
+# df = pd.read_csv("Content_Sheets/Mannually_Processed/Founder_Info.csv")
+
+# Sponsors Or Partners
+df = pd.read_csv("Content_Sheets/Mannually_Processed/Sponsors_Or_Partners.csv")
 
 
 columns = df.columns
@@ -57,7 +67,11 @@ hinglish_file_name = "Hinglish_Utt.csv"
 # Dynamic
 # topic = "Keynote_Speakers"
 
-topic = "Guest_of_Honour"
+# topic = "Guest_of_Honour"
+
+# topic = "Founder_Info"
+
+topic = "Sponsors_Or_Partners"
 
 
 # English Utterances
