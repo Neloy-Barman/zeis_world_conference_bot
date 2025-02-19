@@ -19,8 +19,14 @@ from tqdm import tqdm
 # # Founder Info
 # df = pd.read_csv("Content_Sheets/Mannually_Processed/Founder_Info.csv")
 
-# Sponsors Or Partners
-df = pd.read_csv("Content_Sheets/Mannually_Processed/Sponsors_Or_Partners.csv")
+# # Sponsors Or Partners
+# df = pd.read_csv("Content_Sheets/Mannually_Processed/Sponsors_Or_Partners.csv")
+
+# # Contact Info
+# df = pd.read_csv("Content_Sheets/Mannually_Processed/Contact_Info.csv")
+
+# Contact Info
+df = pd.read_csv("Content_Sheets/Mannually_Processed/Location_Timings.csv")
 
 
 columns = df.columns
@@ -71,7 +77,13 @@ hinglish_file_name = "Hinglish_Utt.csv"
 
 # topic = "Founder_Info"
 
-topic = "Sponsors_Or_Partners"
+# topic = "Sponsors_Or_Partners"
+
+# topic = "Contact_Info"
+
+topic = "Location_Timings"
+
+
 
 
 # English Utterances
