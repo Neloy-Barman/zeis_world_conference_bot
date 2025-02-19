@@ -10,7 +10,7 @@ from tqdm import tqdm
 
 # Dynamic
 # df = pd.read_csv("Content_Sheets/Mannually_Processed/Keynote_Speakers.csv")
-df = pd.read_csv("Content_Sheets/Mannually_Processed/Keynote_Speakers.csv")
+df = pd.read_csv("Content_Sheets/Mannually_Processed/Guest_of_Honour.csv")
 
 
 columns = df.columns
@@ -57,7 +57,7 @@ hinglish_file_name = "Hinglish_Utt.csv"
 # Dynamic
 # topic = "Keynote_Speakers"
 
-topic = "Keynote_Speakers"
+topic = "Guest_of_Honour"
 
 
 # English Utterances
@@ -79,5 +79,5 @@ print("Hinglish Utterances processed successfully........!!\n")
 
 
 """
-    Powershell Command: - python Script_Files/keynote_speakers.py
+    Powershell Command: - python Script_Files/extract_utterances.py
 """
