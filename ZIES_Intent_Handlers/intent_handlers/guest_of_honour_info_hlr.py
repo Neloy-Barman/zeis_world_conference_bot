@@ -1,4 +1,4 @@
-from helpers.lex_response import nextIntent
+from helpers.generic import get_slot_category
 from helpers.lex_response import nextIntentWithResponseCard
 
 def handle_guest_of_honour(event):
@@ -34,14 +34,8 @@ def handle_guest_of_honour(event):
     DR_PANKAJ_MITTAL = ["dr. pankaj mittal", "dr. pankaj", "dr. mittal", "pankaj mittal", "pankaj m.", "pankaj mitttal", "dr pankaj", "dr mittal", "pankaj mittal sir", "pm"]
     DR_RAGHUNATH_ANANT_MASHELKAR = ["dr. raghunath anant mashelkar", "dr. raghunath", "dr. mashelkar", "raghunath mashelkar", "raghunath a. mashelkar", "raghunath anant", "dr. anant mashelkar", "raghunath m.", "raghunath maselkar", "dr raghunath", "dr mashelkar", "ram"]
     DR_RAJ_NEHRU = ["dr. raj nehru", "dr. raj", "dr. nehru", "raj nehru", "raj n.", "dr raj", "dr nehru", "raj neheru", "rn" ]
-
-
-    # guests = [
-    #     # (["Panneerselvam (PS) Madanagopal", "Panneerselvam", "PS Madanagopal", "Madanagopal", "P. S. Madanagopal", "P.S. Madanagopal", "Paneeerselvam", "Madan Gopal", "PSM", "Panneer Selvam", "Panneer"], "Panneerselvam (PS) Madanagopal")
-    #     (PANNEERSELVAM_MADANAGOPAL, "Panneerselvam (PS) Madanagopal")
-    # ]
-
-
+    
+    # List creation with slot type values list and Category
     guests = [
         (PANNEERSELVAM_MADANAGOPAL, "Panneerselvam (PS) Madanagopal"),
         (PROF_ANIL_KASHYAP, "Prof. Anil Kashyap"),
@@ -62,7 +56,7 @@ def handle_guest_of_honour(event):
             "description": """
                 Panneerselvam (PS) Madanagopal is the Chief Executive Officer of MeitY Startup Hub, under the Ministry of Electronics & Information Technology.
                 He leads MeitY Startup Hub, supporting tech-driven startups and AI innovation initiatives.
-                """
+            """
         },
         "Prof. Anil Kashyap": {
             "name": "Prof. Anil Kashyap",
@@ -141,9 +135,9 @@ def handle_guest_of_honour(event):
         )
     else:
         # Fetch Category
-        guest_cat = get_guest_category(
-            guests, 
-            guest.lower()
+        guest_cat = get_slot_category(
+            slot_lists  = guests, 
+            slot = guest.lower()
         )
         print(f"Categorized guest: {guest_cat}")
 
@@ -178,12 +172,3 @@ def handle_guest_of_honour(event):
             imageUrl,
             options
         )
-
-        # return nextIntent(
-        #     session_attributes = session_attributes,
-        #     message = "This is working"
-        # )
-
-def get_guest_category(guests, guest):
-    return { name: category for names, category in guests for name in names}.get(guest, None)
-
