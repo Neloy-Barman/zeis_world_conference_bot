@@ -147,7 +147,20 @@ def handle_guest_of_honour(event):
         subTitle = info['designation']
         # imageUrl = info['image_url']
         imageUrl = "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Founder/Zeba_Parvin.jpg"
-        message = info['description']
+        description = info['description']
+
+        # Response Message
+        message = (
+            '<img src="'
+            + imageUrl
+            + '" style="width:285px;border-top-left-radius: 20px;border-top-right-radius: 20px;"><br><br> <div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
+            + title
+            + '</b><p style="font-size: 14px;color: #e1e1e1;margin-top: 5px;">'
+            + subTitle
+            + "</p></div>"
+            + description
+            + '<br>'
+        )
 
         options = [
             {
@@ -167,8 +180,8 @@ def handle_guest_of_honour(event):
         return nextIntentWithResponseCard(
             session_attributes,
             message, 
-            title,
-            subTitle,
-            imageUrl,
+            None,
+            None,
+            None,
             options
         )
