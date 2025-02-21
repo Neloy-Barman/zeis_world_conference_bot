@@ -25,8 +25,11 @@ from tqdm import tqdm
 # # Contact Info
 # df = pd.read_csv("Content_Sheets/Mannually_Processed/Contact_Info.csv")
 
+# # Contact Info
+# df = pd.read_csv("Content_Sheets/Mannually_Processed/Location_Timings.csv")
+
 # Contact Info
-df = pd.read_csv("Content_Sheets/Mannually_Processed/Location_Timings.csv")
+df = pd.read_csv("Content_Sheets/Mannually_Processed/Conference_Info.csv", encoding='ISO-8859-1')
 
 
 columns = df.columns
@@ -81,7 +84,9 @@ hinglish_file_name = "Hinglish_Utt.csv"
 
 # topic = "Contact_Info"
 
-topic = "Location_Timings"
+# topic = "Location_Timings"
+
+topic = "Conference_Info"
 
 
 
