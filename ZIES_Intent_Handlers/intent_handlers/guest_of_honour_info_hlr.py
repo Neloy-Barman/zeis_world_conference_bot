@@ -123,8 +123,16 @@ def handle_guest_of_honour(event):
         }
     }
 
+    # Fetch Category
+    guest_cat = None
+    if guest:
+        guest_cat = get_slot_category(
+            slot_lists  = guests, 
+            slot = guest.lower()
+        )
+        print(f"Categorized guest: {guest_cat}")
 
-    if guest is None:
+    if guest is None or guest_cat is None:
         return nextIntentWithResponseCard(
             session_attributes,
             message,
@@ -134,13 +142,7 @@ def handle_guest_of_honour(event):
             guest_options
         )
     else:
-        # Fetch Category
-        guest_cat = get_slot_category(
-            slot_lists  = guests, 
-            slot = guest.lower()
-        )
-        print(f"Categorized guest: {guest_cat}")
-
+        
         # Fetch guests Info
         info = guests_info[guest_cat]
         title = info['name']

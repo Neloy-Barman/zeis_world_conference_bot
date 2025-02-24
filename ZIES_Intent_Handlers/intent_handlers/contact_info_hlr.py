@@ -35,21 +35,24 @@ def handle_contact(event):
         "Email": "The official email for ZIES is <strong>zies2023@gmail.com</strong>."
     }
 
-    # Response Message 
-    if contact is None:
-        message = """
-            Call us at: <strong>+91-96210-47786</strong> Or <strong>+91-97938-85136</strong>
-            ~Email us at:</strong> <strong>zies2023@gmail.com</strong>
-            ~Visit our instagram handle<strong><a href="https://www.instagram.com/zies_scholarbirds?igsh=d3pmM2VsYzlxMDZm" target="_blank">here</a></strong>
-        """
-    else:
-        # Fetch Category
+    # Fetch Category
+    contact_cat = None
+    if contact:
         contact_cat = get_slot_category(
             slot_lists  = contacts, 
-            slot = contact.lower()
+            slot = contact.strip().lower()
         )
         print(f"Categorized partner: {contact_cat}")
 
+    # Response Message 
+    if contact is None or contact_cat is None:
+        message = """
+            Call us at: <strong>+91-96210-47786</strong> Or <strong>+91-97938-85136</strong>
+            ~Email us at:</strong> <strong>zies2023@gmail.com</strong>
+            ~Visit our instagram handle <strong><a href="https://www.instagram.com/zies_scholarbirds?igsh=d3pmM2VsYzlxMDZm" target="_blank">here</a></strong>
+        """
+    else:
+        
         # Fetch contacts Info
         message = contacts_info[contact_cat]
 

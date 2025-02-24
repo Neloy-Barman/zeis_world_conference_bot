@@ -69,7 +69,17 @@ def handle_sponsor(event):
     }
 
 
-    if partner is None:
+    # Fetch Category
+    partner_cat = None
+    if partner:
+        partner_cat = get_slot_category(
+            slot_lists  = partners, 
+            slot = partner.lower()
+        )
+        print(f"Categorized partner: {partner_cat}")
+
+
+    if partner is None or partner_cat is None:
         return nextIntentWithResponseCard(
             session_attributes,
             message,
@@ -79,12 +89,6 @@ def handle_sponsor(event):
             partner_options
         )
     else:
-        # Fetch Category
-        partner_cat = get_slot_category(
-            slot_lists  = partners, 
-            slot = partner.lower()
-        )
-        print(f"Categorized partner: {partner_cat}")
 
         # Fetch partners Info
         info = partners_info[partner_cat]
