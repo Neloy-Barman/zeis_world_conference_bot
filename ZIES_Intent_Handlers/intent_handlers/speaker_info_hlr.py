@@ -394,8 +394,8 @@ def handle_speaker(event):
             "image_url": "",
             "designation": "Vice Chancellor, Noorul Islam Centre",
             "description": """
-                Dr. R. Ganesan is the Vice Chancellor of Noorul Islam Centre for Higher Education.
-                He integrates AI-based smart learning techniques into academic programs.
+            Dr. R. Ganesan is the Vice Chancellor of Noorul Islam Centre for Higher Education.
+            He integrates AI-based smart learning techniques into academic programs.
             """
         },
         "Dr. Rajesh Khanna": {
