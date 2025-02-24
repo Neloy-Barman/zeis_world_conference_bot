@@ -39,7 +39,6 @@ folder_path = "Content_Sheets/Mannually_Processed_For_Fallback"
 # shape = df.shape
 # print(f"Dataframe Shape: {shape}")
 
-# # TB Report 2024
 # columns_to_be_removed = ['Topic']
 
 # # Removing columns
