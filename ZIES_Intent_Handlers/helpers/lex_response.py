@@ -15,32 +15,25 @@ def elicit_slot(slot_to_elicit, slot, message, session_attributes, intent_name):
     }
 
 
+def build_response_card(title, sub_title, imageUrl, options):
 
-def buildResponseCardResponse(title, subTitle, imageUrl, options):
-    buttons = []
-    genericAttachments = []
-    
-    j = 0
-    
-    data_5 = {'title': title, 'subTitle':subTitle, 'imageUrl': imageUrl, 'buttons':[]}
-    data_10 = {'title': title, 'subTitle':subTitle, 'imageUrl': imageUrl, 'buttons':[]}
-    
-    for i in options:
-        j = j+1
-        if j<= 5:
-            data_5['buttons'].append(i)
-            if (j == 5) or (options.index(i) == (len(options)-1)):
-                genericAttachments.append(data_5)
-    
-        if (j>5) and (j<=10):
-            data_10['buttons'].append(i)
-            if (j == 10) or (options.index(i) == (len(options)-1)):
-                genericAttachments.append(data_10)
+    # Limit buttons to desired value
+    lim = 20
+    if len(options)>lim: 
+        buttons = options[:lim]
+    else:
+        buttons = options
+
+    # Split buttons into chunks of 5
+    response_values = [{'title': title, 'subTitle': sub_title, 'buttons': buttons[i:i + 5]} 
+                       for i in range(0, len(buttons), 5)]
+
     return {
         'contentType': 'application/vnd.amazonaws.card.generic',
         'version': 11,
-        'genericAttachments': genericAttachments,
-        }
+        'genericAttachments': response_values
+    }
+
 
 
 
@@ -69,7 +62,7 @@ def nextIntentWithResponseCard(session_attributes, message, title, subTitle, ima
                 'contentType': 'PlainText',
                 'content': message
                  },
-                'responseCard': buildResponseCardResponse(
+                'responseCard': build_response_card(
                     title,
                     subTitle,
                     imageUrl,
@@ -93,7 +86,7 @@ def elicit_slot_with_response_card(slot_to_elicit, slots, message, sessionAttrib
                 "contentType": "PlainText",
                 "content": message
             },
-            'responseCard': buildResponseCardResponse(
+            'responseCard': build_response_card(
                 title, 
                 subTitle, 
                 options
