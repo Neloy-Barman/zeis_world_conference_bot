@@ -11,31 +11,31 @@ from tqdm import tqdm
 # Dynamic
 
 # # Keynote Speakers
-# df = pd.read_csv("Content_Sheets/Mannually_Processed/Keynote_Speakers.csv")
+# df = pd.read_csv("Content_Sheets/Mannually_Processed_For_Utterances/Keynote_Speakers.csv")
 
 # # Guest of Honour
-# df = pd.read_csv("Content_Sheets/Mannually_Processed/Guest_of_Honour.csv")
+# df = pd.read_csv("Content_Sheets/Mannually_Processed_For_Utterances/Guest_of_Honour.csv")
 
 # # Founder Info
-# df = pd.read_csv("Content_Sheets/Mannually_Processed/Founder_Info.csv")
+# df = pd.read_csv("Content_Sheets/Mannually_Processed_For_Utterances/Founder_Info.csv")
 
 # # Sponsors Or Partners
-# df = pd.read_csv("Content_Sheets/Mannually_Processed/Sponsors_Or_Partners.csv")
+# df = pd.read_csv("Content_Sheets/Mannually_Processed_For_Utterances/Sponsors_Or_Partners.csv")
 
 # # Contact Info
-# df = pd.read_csv("Content_Sheets/Mannually_Processed/Contact_Info.csv")
+# df = pd.read_csv("Content_Sheets/Mannually_Processed_For_Utterances/Contact_Info.csv")
 
 # # Contact Info
-# df = pd.read_csv("Content_Sheets/Mannually_Processed/Location_Timings.csv")
+# df = pd.read_csv("Content_Sheets/Mannually_Processed_For_Utterances/Location_Timings.csv")
 
 # # Conference Info
-# df = pd.read_csv("Content_Sheets/Mannually_Processed/Conference_Info.csv", encoding='ISO-8859-1')
+# df = pd.read_csv("Content_Sheets/Mannually_Processed_For_Utterances/Conference_Info.csv", encoding='ISO-8859-1')
 
 # # About Us
-# df = pd.read_csv("Content_Sheets/Mannually_Processed/About_Us.csv", encoding='ISO-8859-1')
+# df = pd.read_csv("Content_Sheets/Mannually_Processed_For_Utterances/About_Us.csv", encoding='ISO-8859-1')
 
 # About Us
-df = pd.read_csv("Content_Sheets/Mannually_Processed/Services.csv")
+df = pd.read_csv("Content_Sheets/Mannually_Processed_For_Utterances/Services.csv")
 
 
 columns = df.columns
