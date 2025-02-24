@@ -51,7 +51,7 @@ def handle_guest_of_honour(event):
     guests_info = {
         "Panneerselvam (PS) Madanagopal": {
             "name": "Panneerselvam (PS) Madanagopal",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Guests/PM.jpg",
             "designation": "Chief Executive Officer, MeitY Startup Hub",
             "description": """
                 Panneerselvam (PS) Madanagopal is the Chief Executive Officer of MeitY Startup Hub, under the Ministry of Electronics & Information Technology.
@@ -69,7 +69,7 @@ def handle_guest_of_honour(event):
         },
         "Prof. (Dr.) Simon Mak": {
             "name": "Prof. (Dr.) Simon Mak",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Guests/SM.jpg",
             "designation": "Vice Chancellor, UAU",
             "description": """
                 Prof. (Dr.) Simon Mak is the first American Founding Vice Chancellor in India, at Universal AI University, Bombay.
@@ -78,7 +78,7 @@ def handle_guest_of_honour(event):
         },
         "Dr. Ashwin Fernandes": {
             "name": "Dr. Ashwin Fernandes",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Guests/AFR.jpg",
             "designation": "Executive Director, AMESA",
             "description": """
                 Dr. Ashwin Fernandes is the Executive Director for AMESA at QS Quacquarelli Symonds, a global education ranking organization.
@@ -147,22 +147,34 @@ def handle_guest_of_honour(event):
         info = guests_info[guest_cat]
         title = info['name']
         subTitle = info['designation']
-        # imageUrl = info['image_url']
-        imageUrl = "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Founder/Zeba_Parvin.jpg"
+        imageUrl = info['image_url']
+        # imageUrl = "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Founder/Zeba_Parvin.jpg"
         description = info['description']
 
         # Response Message
-        message = (
-            '<img src="'
-            + imageUrl
-            + '" style="width:285px;border-top-left-radius: 20px;border-top-right-radius: 20px;"><br><br> <div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
-            + title
-            + '</b><p style="font-size: 14px;color: #e1e1e1;margin-top: 5px;">'
-            + subTitle
-            + "</p></div>"
-            + description
-            + '<br>'
-        )
+        if imageUrl != "":
+            message = (
+                '<img src="'
+                + imageUrl
+                + '" style="width:285px;border-top-left-radius: 20px;border-top-right-radius: 20px;"><br><br> <div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
+                + title
+                + '</b><p style="font-size: 14px;color: #e1e1e1;margin-top: 5px;">'
+                + subTitle
+                + "</p></div>"
+                + description
+                + '<br>'
+            )
+        else:
+            message = (
+                '<div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
+                + title
+                + '</b><p style="font-size: 14px;color: #e1e1e1;margin-top: 5px;">'
+                + subTitle
+                + "</p></div>"
+                + description
+                + '<br>'
+            )
+
 
         options = [
             {

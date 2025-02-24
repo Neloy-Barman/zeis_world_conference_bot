@@ -151,7 +151,7 @@ def handle_speaker(event):
         },
         "Mr. Aarsh Srivastava": {
             "name": "Mr. Aarsh Srivastava",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/MAS.jpg",
             "designation": "CEO, Gravitas AI",
             "description": """
                 Mr. Aarsh Srivastava is CEO & Co- Founder of Gravitas AI.
@@ -160,7 +160,7 @@ def handle_speaker(event):
         },
         "Mr. Ashish Gupta": {
             "name": "Mr. Ashish Gupta",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/AG.jpg",
             "designation": "CEO, FretBox",
             "description": """
                 Mr. Ashish Gupta is the Founder and CEO of FretBox.
@@ -168,7 +168,7 @@ def handle_speaker(event):
         },
         "Dr. Neeraj Saxena": {
             "name": "Dr. Neeraj Saxena",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/NS.jpg",
             "designation": "Chancellor, JIS University",
             "description": """
                 Dr. Neeraj Saxena is the Pro Chancellor of JIS University.
@@ -177,7 +177,7 @@ def handle_speaker(event):
         },
         "Prof. Prabhat Ranjan": {
             "name": "Prof. Prabhat Ranjan",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/PR.jpg",
             "designation": "Vice Chancellor, D Y Patil International University",
             "description": """
                 Prof. Prabhat Ranjan is the Vice Chancellor of D Y Patil International University, Akurdi, Pune.
@@ -186,7 +186,7 @@ def handle_speaker(event):
         },
         "Prof. Rajasekharan Pillai VN": {
             "name": "Prof. Rajasekharan Pillai VN",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/RPVN.jpg",
             "designation": "Vice Chancellor, Somaiya Vidyavihar University",
             "description": """
                 Prof. Rajasekharan Pillai is the Vice Chancellor of Somaiya Vidyavihar University.
@@ -195,7 +195,7 @@ def handle_speaker(event):
         },
         "Dr. Rakesh Kumar Jain": {
             "name": "Dr. Rakesh Kumar Jain",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/RKJ.jpg",
             "designation": "Vice Chancellor, Ajeenkya D Y Patil University",
             "description": """
                 Dr. Rakesh Kumar Jain is the Vice Chancellor of Ajeenkya D Y Patil University, Pune.
@@ -204,7 +204,7 @@ def handle_speaker(event):
         },
         "Dr. Poonam Kashyap": {
             "name": "Dr. Poonam Kashyap",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/PK.jpg",
             "designation": "Vice Chancellor, Alard University",
             "description": """
                 Dr. Poonam Kashyap is the Vice Chancellor of Alard University, Pune.
@@ -213,7 +213,7 @@ def handle_speaker(event):
         },
         "Dr. Dharmesh J. Shah": {
             "name": "Dr. Dharmesh J. Shah",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/DJS.jpg",
             "designation": "Vice Chancellor, Indrashil University",
             "description": """
                 Dr. Dharmesh J. Shah is the Vice Chancellor of Indrashil University, Gujarat.
@@ -222,7 +222,7 @@ def handle_speaker(event):
         },
         "Dr. Prasad D. Khandekar": {
             "name": "Dr. Prasad D. Khandekar",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/PDK.jpg",
             "designation": "Vice Chancellor, DES Pune University",
             "description": """
                 Dr. Prasad D Khandekar is the Vice Chancellor of DES Pune University, Pune.
@@ -267,7 +267,7 @@ def handle_speaker(event):
         },
         "Dr. Sayalee Gankar": {
             "name": "Dr. Sayalee Gankar",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/SG.jpg",
             "designation": "Vice Chancellor, D Y Patil University",
             "description": """
                 Dr. Sayalee Gankar is the Vice Chancellor of D Y Patil University Pune, Ambi Maharashtra.
@@ -317,7 +317,7 @@ def handle_speaker(event):
         },
         "Prof. (Dr.) Ajay Bhushan": {
             "name": "Prof. (Dr.) Ajay Bhushan",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/AB.jpg",
             "designation": "Vice Chancellor, Scope Global Skills University",
             "description": """
                 Prof. (Dr.) Ajay Bhushan is the Vice Chancellor of Scope Global Skills University, Bhopal, Madhya Pradesh.
@@ -325,7 +325,7 @@ def handle_speaker(event):
         },
         "Prof. Gopalkrishna Joshi": {
             "name": "Prof. Gopalkrishna Joshi",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/Gj.jpg",
             "designation": "Vice Chancellor, MIT Vishwaprayag University",
             "description": """
                 Prof. Gopalkrishna Joshi is the Founding Vice Chancellor of MIT Vishwaprayag University, Solapur.
@@ -333,7 +333,7 @@ def handle_speaker(event):
         },
         "Prof. (Dr.) G.K. Shirude": {
             "name": "Prof. (Dr.) G.K. Shirude",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/GKS.jpg",
             "designation": "Vice Chancellor, Sri Balaji University",
             "description": """
                 Prof. (Dr.) G.K. Shirude is the Vice Chancellor of Sri Balaji University, Pune.
@@ -341,7 +341,7 @@ def handle_speaker(event):
         },
         "Dr. Shrihari (Prakash) Honwad": {
             "name": "Dr. Shrihari (Prakash) Honwad",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/SPH.jpg",
             "designation": "Vice Chancellor",
             "description": """
                 Dr. Shrihari (Prakash) Honwad has served as Vice Chancellor at multiple AI-level universities and is associated with the Indian Institute of Science (IISc).
@@ -349,7 +349,7 @@ def handle_speaker(event):
         },
         "Dr. Atul Kumar": {
             "name": "Dr. Atul Kumar",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/AK.jpg",
             "designation": "Dean, Dr. D Y Patil B-School",
             "description": """
                 Dr. Atul Kumar is the Dean of Dr. D Y Patil B-School, Pune, Maharashtra.
@@ -357,7 +357,7 @@ def handle_speaker(event):
         },
         "Prof. (Dr.) Tabrez Ahmad": {
             "name": "Prof. (Dr.) Tabrez Ahmad",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/TA.jpg",
             "designation": "Dean, GD Goenka University",
             "description": """
                 Prof. (Dr.) Tabrez Ahmad is the Dean of Manav Law School and has previously served as the Vice Chancellor of GD Goenka University.
@@ -365,7 +365,7 @@ def handle_speaker(event):
         },
         "Prof. Adit Gupta": {
             "name": "Prof. Adit Gupta",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/AGU.jpg",
             "designation": "Director, Institute of Education & Research",
             "description": """
                 Prof. Adit Gupta is the Director of the Institute of Education & Research.
@@ -504,22 +504,33 @@ def handle_speaker(event):
         info = speakers_info[speaker_cat]
         title = info['name']
         subTitle = info['designation']
-        # imageUrl = info['image_url']
-        imageUrl = "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Founder/Zeba_Parvin.jpg"
+        imageUrl = info['image_url']
+        # imageUrl = "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Founder/Zeba_Parvin.jpg"
         description = info['description']
 
-        # Response Message
-        message = (
-            '<img src="'
-            + imageUrl
-            + '" style="width:285px;border-top-left-radius: 20px;border-top-right-radius: 20px;"><br><br> <div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
-            + title
-            + '</b><p style="font-size: 14px;color: #e1e1e1;margin-top: 5px;">'
-            + subTitle
-            + "</p></div>"
-            + description
-            + '<br>'
-        )
+       # Response Message
+        if imageUrl != "":
+            message = (
+                '<img src="'
+                + imageUrl
+                + '" style="width:285px;border-top-left-radius: 20px;border-top-right-radius: 20px;"><br><br> <div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
+                + title
+                + '</b><p style="font-size: 14px;color: #e1e1e1;margin-top: 5px;">'
+                + subTitle
+                + "</p></div>"
+                + description
+                + '<br>'
+            )
+        else:
+            message = (
+                '<div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
+                + title
+                + '</b><p style="font-size: 14px;color: #e1e1e1;margin-top: 5px;">'
+                + subTitle
+                + "</p></div>"
+                + description
+                + '<br>'
+            )
 
         options = [
             {

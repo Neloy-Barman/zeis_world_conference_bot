@@ -43,7 +43,7 @@ def handle_sponsor(event):
     partners_info = {
         "Gravitas AI": {
             "name": "Gravitas AI",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Sponsors/gravitas_ai.png",
             "description": """
                Gravitas AI is a niche artificial intelligence company focused on optimizing productivity and enhancing customer experiences. 
                They specialize in Enterprise bots, Chatbots, and Virtual Assistants driven through their own IP NLP technology. 
@@ -92,10 +92,30 @@ def handle_sponsor(event):
 
         # Fetch partners Info
         info = partners_info[partner_cat]
-        title = None
+        title = info['name']
         subTitle = None
-        imageUrl = None
-        message = info['description']
+        imageUrl = info['image_url']
+        description = info['description']
+
+        # Response Message
+        if imageUrl != "":
+            message = (
+                '<img src="'
+                + imageUrl
+                + '" style="width:285px;border-top-left-radius: 20px;border-top-right-radius: 20px;"><br><br> <div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
+                + title
+                + '</b></div><br>'
+                + description
+                + '<br>'
+            )
+        else:
+            message = (
+                '<div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
+                + title
+                + '</b></div><br>'
+                + description
+                + '<br>'
+            )
 
         options = [
             {
@@ -115,9 +135,9 @@ def handle_sponsor(event):
         return nextIntentWithResponseCard(
             session_attributes,
             message, 
-            title,
-            subTitle,
-            imageUrl,
+            None,
+            None,
+            None,
             options
         )
 

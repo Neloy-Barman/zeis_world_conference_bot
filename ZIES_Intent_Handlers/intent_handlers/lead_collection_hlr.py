@@ -1,3 +1,8 @@
+import json
+import requests
+from pytz import timezone 
+from datetime import date
+from datetime import datetime
 from helpers.generic import validate_slot
 from helpers.lex_response import nextIntent
 from helpers.lex_response import elicit_slot
@@ -132,9 +137,57 @@ def handle_lead_collection(event):
         session_attributes['Email'] = email
         session_attributes['ContactNumber'] = contact_number  
         session_attributes['Designation'] = designation    
-        
-        # Response Message
-        message = f"Thank you {name}. I am here to assist you. What would you like to explore further?"
+
+
+        try:
+
+            south_africa = timezone('Asia/Kolkata')
+            sa_time = datetime.now(south_africa)
+            timenow = sa_time.strftime('%H:%M')
+    
+            today = date.today()
+            print("today", today)
+
+            headers = {'Content-Type': 'application/json'}
+
+            # Handle successful lead submission after all details
+            data = {
+                "client_id": "71",
+                # "center_id": "35",
+                "isEdit": "true",
+                "bot_client_id": session_attributes['CleintId'],
+                "fields": {
+                    "job_title": designation
+                },
+                "contact_name": name,
+                "contact_phone": contact_number,
+                "country_code": "",
+                "contact_email": email,
+                "company_name": None,
+                "lead_source": "Tina",
+                "lead_type": "Hot Lead",
+                "lead_date": str(today),
+                "lead_time": str(timenow),
+                "lead_status": "New",
+                "lead_space_id": None
+            }
+
+            print(f"Data payload: {data}")
+
+            response = requests.post(
+                'https://xywfgrd3z1.execute-api.us-east-1.amazonaws.com/prod/createLeads', 
+                headers=headers, 
+                data=json.dumps(data)
+            )
+            
+            print(f"Data sending response : {response}")
+            
+        except Exception as e:
+            print("A fatal error occured.")
+            print(f"This is the error: {e}")
+        finally:
+            # Response Message
+            message = f"Thank you {name}. I am here to assist you. What would you like to explore further?"
 
     else:
         message = f"Hello, {name}. I am here to assist you. What would you like to explore further?"
