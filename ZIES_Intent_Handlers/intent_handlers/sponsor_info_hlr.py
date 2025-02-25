@@ -52,7 +52,7 @@ def handle_sponsor(event):
         },
         "NICMAR": {
             "name": "NICMAR",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Sponsors/nicmar.jpg",
             "description": """
                 NICMAR is a prestigious institution specializing in construction, infrastructure, real estate, and project management education. 
                 As the Platinum Partner, NICMAR plays a key role in supporting the AI 360 conference.
@@ -60,7 +60,7 @@ def handle_sponsor(event):
         },
         "Fretbox": {
             "name": "Fretbox",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Sponsors/fretbox.jpg",
             "description": """
                 Fretbox is a technology-driven platform offering innovative solutions for student housing and residential communities. 
                 They support AI-driven advancements in facility management and security.

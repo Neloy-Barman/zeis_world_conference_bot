@@ -19,10 +19,11 @@ def handle_guest_of_honour(event):
         {'text': 'Prof. Anil Kashyap', 'value': 'Prof. Anil Kashyap'},
         {'text': 'Prof. (Dr.) Simon Mak', 'value': 'Prof. (Dr.) Simon Mak'},
         {'text': 'Dr. Ashwin Fernandes', 'value': 'Dr. Ashwin Fernandes'},
-        {'text': 'Dr. Sunil Shukla', 'value': 'Dr. Sunil Shukla'},
-        {'text': 'Dr. Pankaj Mittal', 'value': 'Dr. Pankaj Mittal'},
-        {'text': 'Dr. Raghunath Anant Mashelkar', 'value': 'Dr. Raghunath Anant Mashelkar'},
-        {'text': 'Dr. Raj Nehru', 'value': 'Dr. Raj Nehru'}
+        {'text': 'Prof. Parag Shah', 'value': 'Prof. Parag Shah'},
+        {'text': 'Dr. Madhu Chitkara', 'value': 'Dr. Madhu Chitkara'},
+        {'text': 'Dr. Swati Mujumdar', 'value': 'Dr. Swati Mujumdar'},
+        {'text': 'Col. Yogesh Joshi', 'value': 'Col. Yogesh Joshi'},
+        
     ]
 
     # Slot Type values
@@ -30,21 +31,22 @@ def handle_guest_of_honour(event):
     PROF_ANIL_KASHYAP = ["prof. anil kashyap", "prof. anil", "prof. kashyap", "anil kashyap", "dr. anil kashyap",  "anil k.", "kashyap a.", "anil kasyap", "prof anil", "anil kashyap sir", "ak"]
     PROF_DR_SIMON_MAK = ["prof. (dr.) simon mak", "prof. simon", "dr. simon", "simon mak", "prof. mak", "dr. mak", "simon m.", "simmon mak", "simon mac", "prof simon", "dr simon", "sm"]
     DR_ASHWIN_FERNANDES = ["dr. ashwin fernandes", "dr. ashwin", "dr. fernandes", "ashwin fernandes", "ashwin f.", "ashwin fernandis", "dr ashwin", "dr fernandes", "ashwin sir", "af"]
-    DR_SUNIL_SHUKLA = ["dr. sunil shukla", "dr. sunil", "dr. shukla", "sunil shukla", "sunil s.", "sunil sukla", "dr sunil", "dr shukla", "sunil shukla sir", "ss"]
-    DR_PANKAJ_MITTAL = ["dr. pankaj mittal", "dr. pankaj", "dr. mittal", "pankaj mittal", "pankaj m.", "pankaj mitttal", "dr pankaj", "dr mittal", "pankaj mittal sir", "pm"]
-    DR_RAGHUNATH_ANANT_MASHELKAR = ["dr. raghunath anant mashelkar", "dr. raghunath", "dr. mashelkar", "raghunath mashelkar", "raghunath a. mashelkar", "raghunath anant", "dr. anant mashelkar", "raghunath m.", "raghunath maselkar", "dr raghunath", "dr mashelkar", "ram"]
-    DR_RAJ_NEHRU = ["dr. raj nehru", "dr. raj", "dr. nehru", "raj nehru", "raj n.", "dr raj", "dr nehru", "raj neheru", "rn" ]
-    
+    PROF_PARAG_SHAH = [ "prof. parag shah", "prof. parag", "prof. shah", "parag shah", "prof parag", "prof shah", "parag", "shah", "proff. parag", "proff. shah", "proff parag", "proff shah", "profesor parag", "profesor shah", "parag s.", "p. shah", "prf. parag", "prf. shah"]
+    DR_MADHU_CHITKARA = [ "dr. madhu chitkara", "dr. madhu", "dr. chitkara", "madhu chitkara", "dr madhu", "dr chitkara", "madhu", "chitkara", "drr. madhu", "drr. chitkara", "drr madhu", "drr chitkara","doctor madhu", "doctor chitkara", "madhu c.", "m. chitkara", "dr. madhoo", "dr. chitkra","dr madhoo", "dr chitkra", "madhoo chitkara", "madhu chitkra"]
+    DR_SWATI_MUJUMDAR = [ "dr. swati mujumdar", "dr. swati", "dr. mujumdar", "swati mujumdar", "dr swati", "dr mujumdar", "swati", "mujumdar", "drr. swati", "drr. mujumdar", "drr swati", "drr mujumdar","doctor swati", "doctor mujumdar", "swati m.", "s. mujumdar", "dr. swatee", "dr. mujmdar","dr swatee", "dr mujmdar", "swatee mujumdar", "swati mujmdar" ]
+    COL_YOGESH_JOSHI = [ "col. yogesh joshi", "col. yogesh", "col. joshi", "yogesh joshi", "col yogesh", "col joshi", "yogesh", "joshi", "coll. yogesh", "coll. joshi", "coll yogesh", "coll joshi","colonel yogesh", "colonel joshi", "yogesh j.", "y. joshi", "col. yogeesh", "col. joshii","col yogeesh", "col joshii", "yogeesh joshi", "yogesh joshii"]
+
     # List creation with slot type values list and Category
     guests = [
         (PANNEERSELVAM_MADANAGOPAL, "Panneerselvam (PS) Madanagopal"),
         (PROF_ANIL_KASHYAP, "Prof. Anil Kashyap"),
         (PROF_DR_SIMON_MAK, "Prof. (Dr.) Simon Mak"),
         (DR_ASHWIN_FERNANDES, "Dr. Ashwin Fernandes"),
-        (DR_SUNIL_SHUKLA, "Dr. Sunil Shukla"),
-        (DR_PANKAJ_MITTAL, "Dr. Pankaj Mittal"),
-        (DR_RAGHUNATH_ANANT_MASHELKAR, "Dr. Raghunath Anant Mashelkar"),
-        (DR_RAJ_NEHRU, "Dr. Raj Nehru")
+        (PROF_PARAG_SHAH, "Prof. Parag Shah"),
+        (DR_MADHU_CHITKARA, "Dr. Madhu Chitkara"),
+        (DR_SWATI_MUJUMDAR, "Dr. Swati Mujumdar"),
+        (COL_YOGESH_JOSHI, "Col. Yogesh Joshi"),
+
     ]
 
     # All the guest info
@@ -60,7 +62,7 @@ def handle_guest_of_honour(event):
         },
         "Prof. Anil Kashyap": {
             "name": "Prof. Anil Kashyap",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Guests/PAK.jpg",
             "designation": "President, NICMAR University",
             "description": """
                 Prof. Anil Kashyap is the President & Chancellor of NICMAR University and also serves as the Director General of NICMAR.
@@ -85,42 +87,42 @@ def handle_guest_of_honour(event):
                 He specializes in global university rankings, AI education policies, and academic excellence strategies.
             """
         },
-        "Dr. Sunil Shukla": {
-            "name": "Dr. Sunil Shukla",
-            "image_url": "",
-            "designation": "Director General, EDII",
+        "Prof. Parag Shah": {
+            "name": "Prof. Parag Shah",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Guests/PS.png",
+            "designation": "Director, MIDAS School of Entrepreneurship",
             "description": """
-                Dr. Sunil Shukla is the Director General of the Entrepreneurship Development Institute of India (EDII).
-                He has played a key role in promoting AI-driven entrepreneurial strategies and skill development.
+               Prof. Parag Shah is the Chief Mentor of MIDAS School of Entrepreneurship and the Founding Chairman of Flame University, Pune.
+               He has mentored numerous entrepreneurs and played a vital role in fostering startup culture in India.
             """
         },
-        "Dr. Pankaj Mittal": {
-            "name": "Dr. Pankaj Mittal",
-            "image_url": "",
-            "designation": "Secretary General, AIU",
+        "Dr. Madhu Chitkara": {
+            "name": "Dr. Madhu Chitkara",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Guests/MC.jpg",
+            "designation": "Pro-Chancellor, Chitkara University",
             "description": """
-                Dr. Pankaj Mittal is the Secretary General of the Association of Indian Universities (AIU).
-                She focuses on policy reforms and the integration of AI into higher education.
+                Dr. Madhu Chitkara is the Co-Founder and Pro Chancellor of Chitkara University, Punjab & HP.
+                She has been instrumental in advancing academic excellence and industry partnerships at Chitkara University.
             """
         },
-        "Dr. Raghunath Anant Mashelkar": {
-            "name": "Dr. Raghunath Anant Mashelkar",
-            "image_url": "",
-            "designation": "Scientist, CSIR India",
+        "Dr. Swati Mujumdar": {
+            "name": "Dr. Swati Mujumdar",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Guests/SM.jpg",
+            "designation": "Pro-Chancellor, Symbiosis Skill Universities",
             "description": """
-                Dr. Raghunath Anant Mashelkar is a renowned scientist and former Director General of CSIR India.
-                He has been a strong advocate for AI-driven research and innovation in India.
+                Dr. Swati Mujumdar is the Pro Chancellor of Symbiosis Skills Universities in Indore & Pune.
+                She has been a pioneer in integrating AI and technology-driven skills training into education.
             """
         },
-        "Dr. Raj Nehru": {
-            "name": "Dr. Raj Nehru",
-            "image_url": "",
-            "designation": "Vice Chancellor, SVSU",
+        "Col. Yogesh Joshi": {
+            "name": "Col. Yogesh Joshi",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Guests/YJ.png",
+            "designation": "Director, Hinjawadi Industries Association (HIA)",
             "description": """
-                Dr. Raj Nehru is the Vice Chancellor of Shri Vishwakarma Skill University.
-                He specializes in AI-powered skill development and vocational education.
+                Col. Yogesh Joshi is the President of the Hinjawadi Industries Association (HIA), Pune, Maharashtra.
+                He has been a key figure in promoting AI adoption and industry-academia collaboration in Pune.
             """
-        }
+        },
     }
 
     # Fetch Category
