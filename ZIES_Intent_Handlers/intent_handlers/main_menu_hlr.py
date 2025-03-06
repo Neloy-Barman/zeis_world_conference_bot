@@ -7,8 +7,8 @@ def handle_main_menu(event):
     session_attributes = event["sessionAttributes"] if event["sessionAttributes"] is not None else {}
 
     # Message
-    message = "Kindly explore the buttons below to learn more about <strong>AI 360 Advanced Powered Learning</strong> conference or ZIES."
-
+    message = "Kindly explore the buttons below to learn more about the events or ZIES."
+    
     # Buttons
     button_elems = all_buttons
     buttons = [{'text': f'{button}', 'value': f'{button}'} for button in button_elems]

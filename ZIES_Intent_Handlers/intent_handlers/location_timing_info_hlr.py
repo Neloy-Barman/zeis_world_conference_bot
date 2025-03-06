@@ -1,24 +1,68 @@
-from helpers.generic import get_slot_category
+import pandas as pd
+from data.constants import guided_buttons
+from helpers.generic import create_buttons
 from helpers.lex_response import nextIntentWithResponseCard
+from helpers.information_retrieval import perform_fuzzywuzzy
 
 def handle_location_timing(event):
-
+    
     # Session Attributes
     session_attributes = event["sessionAttributes"] if event["sessionAttributes"] is not None else {}
 
-    # Fetching slot values
-    location = event['currentIntent']['slots']['Location']
-    print(f"Location value: {location}")
+    # Reading CSV file
+    result = pd.read_csv("./data/location_and_timing.csv")
 
-    time = event['currentIntent']['slots']['Time']
-    print(f"Time value: {time}")
+    # Initial
+    # Message
+    message = "Kindly select the event for which you want location and timing information"
+    # Buttons
+    events = ['AI 360 Advanced Powered Learning', 'AI Revolutionizing Education']
+    buttons = [{'text': f'{item}', 'value': f'Venue and Schedule of ​{item}​'} for item in events]
 
-    # Options
-    options = [
-        { 'text': "Main Menu", 'value': "Main Menu" },
-        { 'text': "About Us", 'value': "About Us" },
-        { 'text': "Contact Us", 'value': "Contact Us" }
-    ]
+    # Fetching slot value
+    event = event['currentIntent']['slots']['event']
+    print(f"Event Name: {event}")
+
+    # Event is not None
+    if event:
+        # Information Retrieval
+        _, answer = perform_fuzzywuzzy(
+            result = result,
+            slot = event,
+            column = 'event'
+        )
+
+        if answer is not None:
+            # Message
+            message = answer['location_and_timing']
+            # Buttons
+            buttons = create_buttons(guided_buttons)
+        
+        else:
+            message = "Do you wish to check with our organized events?"
+    else:
+        message = "Click on the below buttons to find about location and timing information of our events"
+
+    print(f"Final message: {message}")
+    print(f"Final buttons: {buttons}")
+        
+    return nextIntentWithResponseCard(
+        session_attributes,
+        message,
+        None, 
+        None, 
+        None,
+        buttons
+    )
+
+
+
+
+
+
+
+
+
 
     # Response Message
     if location is None and time is None:

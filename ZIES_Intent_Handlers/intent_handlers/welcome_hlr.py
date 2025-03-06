@@ -8,8 +8,7 @@ def handle_welcome(event):
 
     # Message
     message = """
-        Hello, I am TINA - ZIES' AI-Powered Assistant. I am here to assist you with all the information you need about the upcoming 
-        <strong>AI 360 Advanced Powered Learning</strong> conference being held on 28th February, 2025 at Hinjawadi, India. 
+        Hello, I am TINA - ZIES' AI-Powered Assistant. I am here to assist you with all the information you need about the organized events by ZIES.
         Whether you're looking for event details and timings, speakers, guest of honor profiles or insights into ZIES and its founder, I'm here to help!
         ~How may I assist you today?
     """

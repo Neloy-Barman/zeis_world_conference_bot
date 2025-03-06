@@ -6,6 +6,7 @@ from intent_handlers.main_menu_hlr import handle_main_menu
 from intent_handlers.sponsor_info_hlr import handle_sponsor
 from intent_handlers.contact_info_hlr import handle_contact
 from intent_handlers.speaker_info_hlr import handle_speaker
+from intent_handlers.event_info_hlr import handle_event_info
 from intent_handlers.founder_info_hlr import handle_founder_info
 from intent_handlers.about_us_info_hlr import handle_about_us_info
 from intent_handlers.lead_collection_hlr import handle_lead_collection
@@ -35,7 +36,8 @@ def lambda_handler(event, context):
         "Speaker_Info_ZIES": handle_speaker,
         "Fallback_ZIES": handle_fallback,
         "Main_Menu_ZIES": handle_main_menu,
-        "Welcome_ZIES": handle_welcome
+        "Welcome_ZIES": handle_welcome,
+        "Event_Info_ZIES": handle_event_info
     }
 
     return intent_to_handlers[intent_name](event)
