@@ -3,6 +3,7 @@ import requests
 from pytz import timezone 
 from datetime import date
 from datetime import datetime
+from data.constants import all_buttons
 from helpers.generic import validate_slot
 from helpers.lex_response import nextIntent
 from helpers.lex_response import elicit_slot
@@ -24,16 +25,8 @@ def handle_lead_collection(event):
     designation = session_attributes.get('Designation', None)
 
     # Button Options
-    options = [
-        { 'text': "Conference Info", 'value': "Conference Info" },
-        { 'text': "Venue and Schedule", 'value': "Venue and Schedule" },
-        { 'text': "Speakers", 'value': "Speakers" },
-        { 'text': "Guests", 'value': "Guests" },
-        { 'text': "Sponsors", 'value': "Sponsors" },
-        { 'text': "About Us", 'value': "About Us" },
-        { 'text': "Contact Us", 'value': "Contact Us" },
-        { 'text': "Founder Info", 'value': "Founder Info" }
-    ]
+    button_elems = all_buttons
+    options = [{'text': f'{button}', 'value': f'{button}'} for button in button_elems]
 
     if session_attributes.get('Name', None) is None:
         slots = event['currentIntent']['slots']

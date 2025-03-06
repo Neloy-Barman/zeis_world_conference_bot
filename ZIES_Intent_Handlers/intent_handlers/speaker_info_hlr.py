@@ -234,7 +234,7 @@ def handle_speaker(event):
         },
         "Prof. (Dr.) Sundeep Mishra": {
             "name": "Prof. (Dr.) Sundeep Mishra",
-            "image_url": "",
+            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Speakers/PSM.png",
             "designation": "Vice Chancellor, NIMS University Rajasthan.",
             "description": """
                 Prof. (Dr.) Sundeep Mishra is the Vice Chancellor of NIMS University Rajasthan.

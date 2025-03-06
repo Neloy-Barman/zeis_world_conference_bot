@@ -1,6 +1,8 @@
 import json
 
+from intent_handlers.welcome_hlr import handle_welcome
 from intent_handlers.fallback_hlr import handle_fallback
+from intent_handlers.main_menu_hlr import handle_main_menu
 from intent_handlers.sponsor_info_hlr import handle_sponsor
 from intent_handlers.contact_info_hlr import handle_contact
 from intent_handlers.speaker_info_hlr import handle_speaker
@@ -10,6 +12,7 @@ from intent_handlers.lead_collection_hlr import handle_lead_collection
 from intent_handlers.conference_info_hlr import handle_conference_info
 from intent_handlers.guest_of_honour_info_hlr import handle_guest_of_honour
 from intent_handlers.location_timing_info_hlr import handle_location_timing
+
 
 
 
@@ -30,7 +33,9 @@ def lambda_handler(event, context):
         "Lead_Generation_ZIES": handle_lead_collection,
         "Founder_Info_ZIES": handle_founder_info,
         "Speaker_Info_ZIES": handle_speaker,
-        "Fallback_ZIES": handle_fallback
+        "Fallback_ZIES": handle_fallback,
+        "Main_Menu_ZIES": handle_main_menu,
+        "Welcome_ZIES": handle_welcome
     }
 
     return intent_to_handlers[intent_name](event)

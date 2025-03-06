@@ -57,14 +57,19 @@ def handle_about_us_info(event):
             ]
 
         else:
+                # We organize a variety of impactful educational events, including:
+                # <ul>
+                #     <li>Education Fairs</li>
+                #     <li>Vice Chancellor & Principal Conclaves</li>
+                #     <li>School and College Seminars</li>
+                #     <li>Internship Programs</li>
+                # </ul>
             message = """
                 We organize a variety of impactful educational events, including:
-                <ul>
-                    <li>Education Fairs</li>
-                    <li>Vice Chancellor & Principal Conclaves</li>
-                    <li>School and College Seminars</li>
-                    <li>Internship Programs</li>
-                </ul>
+                • Education Fairs
+                • Vice Chancellor & Principal Conclaves
+                • School and College Seminars
+                • Internship Programs
             """
 
             # Options

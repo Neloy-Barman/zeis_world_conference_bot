@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Sponsor_ZIES",
+    "version": "1",
+    "enumerationValues": [
+      {
+        "value": "Fretbox"
+      },
+      {
+        "value": "NICMAR"
+      },
+      {
+        "value": "Gravitas AI"
+      }
+    ],
+    "valueSelectionStrategy": "ORIGINAL_VALUE"
+  }
+}
