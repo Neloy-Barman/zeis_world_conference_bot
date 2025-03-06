@@ -1,114 +1,77 @@
-from helpers.generic import get_slot_category
+import pandas as pd
+from data.constants import guided_buttons
+from helpers.generic import create_buttons
+from helpers.generic import create_unordered_list_elems
 from helpers.lex_response import nextIntentWithResponseCard
+from helpers.information_retrieval import perform_fuzzywuzzy
 
 def handle_sponsor(event):
 
     # Session Attributes
     session_attributes = event["sessionAttributes"] if event["sessionAttributes"] is not None else {}
 
+    # Reading CSV file
+    result = pd.read_csv("./data/events.csv")
+
+    # Initial
+    # Message
+    message = "Kindly select the event for which you want sponsor information"
+    # Buttons
+    events = ['AI 360 Advanced Powered Learning', 'AI Revolutionizing Education']
+    buttons = [{'text': f'{item}', 'value': f'Sponsors of ​{item}​'} for item in events]
+
     # Fetching slot value
-    partner = event['currentIntent']['slots']['Partner']
+    slots = event['currentIntent']['slots']
+    partner = slots['Partner']
     print(f"Partner Name: {partner}")
 
-    # Response Message
-    message = """
-        The conference has esteemed sponsors and partners, including:
-        <ul>
-            <li><strong>AI Partner:</strong> Gravitas AI</li>
-            <li><strong>Platinum Partner:</strong> NICMAR</li>
-            <li><strong>Supporting Partner:</strong> Fretbox</li>
-        </ul>
-    """
+    event = slots['event']
+    print(f"Event Name: {event}")
 
-    # Options
-    partner_options = [
-        {'text': 'Gravitas AI', 'value': 'Gravitas AI'},
-        {'text': 'NICMAR', 'value': 'NICMAR'},
-        {'text': 'Fretbox', 'value': 'Fretbox'}
-    ]
-
-    # Slot Type values
-    GRAVITAS_AI = ["gravitas ai"]
-    NICMAR = ["nicmar"]
-    FRETBOX = ["fretbox"]
-
-    # List creation with slot type values list and Category
-    partners = [
-        (GRAVITAS_AI, "Gravitas AI"),
-        (NICMAR, "NICMAR"),
-        (FRETBOX, "Fretbox"),
-    ]
-
-    # All the partner info
-    partners_info = {
-        "Gravitas AI": {
-            "name": "Gravitas AI",
-            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Sponsors/gravitas_ai.png",
-            "description": """
-               Gravitas AI is a niche artificial intelligence company focused on optimizing productivity and enhancing customer experiences. 
-               They specialize in Enterprise bots, Chatbots, and Virtual Assistants driven through their own IP NLP technology. 
-               Find more details <a href="https://www.gravitas.ai/" target="_blank">here</a>.
-            """
-        },
-        "NICMAR": {
-            "name": "NICMAR",
-            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Sponsors/nicmar.jpg",
-            "description": """
-                NICMAR is a prestigious institution specializing in construction, infrastructure, real estate, and project management education. 
-                As the Platinum Partner, NICMAR plays a key role in supporting the AI 360 conference.
-            """
-        },
-        "Fretbox": {
-            "name": "Fretbox",
-            "image_url": "https://global-upload-storage.s3.us-east-1.amazonaws.com/ZIES/Sponsors/fretbox.jpg",
-            "description": """
-                Fretbox is a technology-driven platform offering innovative solutions for student housing and residential communities. 
-                They support AI-driven advancements in facility management and security.
-            """
-        }
-    }
-
-
-    # Fetch Category
-    partner_cat = None
-    if partner:
-        partner_cat = get_slot_category(
-            slot_lists  = partners, 
-            slot = partner.lower()
+    # Event is not None
+    if event:
+        # Information Retrieval
+        answer, _ = perform_fuzzywuzzy(
+            result = result,
+            slot = event,
+            column = 'event'
         )
-        print(f"Categorized partner: {partner_cat}")
 
-
-    if partner is None or partner_cat is None:
-        return nextIntentWithResponseCard(
-            session_attributes,
-            message,
-            None,
-            None,
-            None,
-            partner_options
-        )
-    else:
-
-        # Fetch partners Info
-        info = partners_info[partner_cat]
-        title = info['name']
-        subTitle = None
-        imageUrl = info['image_url']
-        description = info['description']
-
-        # Response Message
-        if imageUrl != "":
-            message = (
-                '<img src="'
-                + imageUrl
-                + '" style="width:285px;border-top-left-radius: 20px;border-top-right-radius: 20px;"><br><br> <div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
-                + title
-                + '</b></div><br>'
-                + description
-                + '<br>'
-            )
+        if answer is not None:
+            if answer == 0:
+                result = pd.read_csv("./data/sponsors.csv")
+                partner_options = result['sponsor'].to_list()
+                # Message
+                message = f"""
+                    The conference has esteemed sponsors and partners, including:
+                    {create_unordered_list_elems(partner_options)}
+                """
+                # Buttons
+                buttons = create_buttons(partner_options)
+            else:
+                # Message
+                message = "Kindly visit <a href='https://ziesworld.in/'>here</a> to check with the sponsors info."
+                # Buttons
+                buttons = create_buttons(guided_buttons)
         else:
+            message = "Do you wish to check with the sponsors of our organized events?"
+    elif partner:
+
+        result = pd.read_csv("./data/sponsors.csv")
+
+        # Information Retrieval
+        _, answer = perform_fuzzywuzzy(
+            result = result,
+            slot = partner,
+            column = 'sponsor'
+        )
+
+        if answer is not None:
+            title = answer['sponsor']
+            imageUrl = answer['imageUrl']
+            description = answer['desc']
+
+            # Message
             message = (
                 '<div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
                 + title
@@ -117,27 +80,21 @@ def handle_sponsor(event):
                 + '<br>'
             )
 
-        options = [
-            {
-                'text': "Main Menu",
-                'value': "Main Menu"
-            },
-            {
-                'text': "About Us",
-                'value': "About Us"
-            },
-            {
-                'text': "Contact Us",
-                'value': "Contact Us"
-            }
-        ]
+            # Buttons
+            buttons = create_buttons(guided_buttons)
 
-        return nextIntentWithResponseCard(
-            session_attributes,
-            message, 
-            None,
-            None,
-            None,
-            options
-        )
+        else:
+            message = "Do you wish to check with the sponsors of our organized events?"
+    else:
+        message = "Click on the below buttons to find about the sponsors information of our events"
+
+
+    return nextIntentWithResponseCard(
+        session_attributes,
+        message, 
+        None,
+        None,
+        None,
+        buttons
+    )
 

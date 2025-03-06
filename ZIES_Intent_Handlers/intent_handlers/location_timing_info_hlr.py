@@ -39,7 +39,7 @@ def handle_location_timing(event):
             buttons = create_buttons(guided_buttons)
         
         else:
-            message = "Do you wish to check with our organized events?"
+            message = "Do you wish to check with our venue and schedule for the organized events?"
     else:
         message = "Click on the below buttons to find about location and timing information of our events"
 

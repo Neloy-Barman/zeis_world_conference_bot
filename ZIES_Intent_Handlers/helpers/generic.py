@@ -17,10 +17,11 @@ def validate_slot(slot_name, slot_value):
     return False  # Default: Invalid if no match
 
 
-def create_unordered_list_elems(input_string):
+def create_unordered_list_elems(items):
 
     # Split the string into individual items
-    items = [item.strip() for item in input_string.split(",")]
+    # items = [item.strip() for item in input_string.split(",")]
+    # items
 
     # Generate the unordered list in HTML format
     html_output = "<ul>"
