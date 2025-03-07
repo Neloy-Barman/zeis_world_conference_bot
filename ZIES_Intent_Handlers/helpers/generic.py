@@ -43,7 +43,7 @@ def create_profile_card(title, subTitle, description, imageUrl):
         return (
                 '<img src="'
                 + imageUrl
-                + '" style="width:285px;border-top-left-radius: 20px;border-top-right-radius: 20px;"><br><br> <div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
+                + '" style="width:285px;border-top-left-radius: 20px;border-top-right-radius: 20px;"><br><br><div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
                 + title
                 + '</b><p style="font-size: 14px;color: #e1e1e1;margin-top: 5px;">'
                 + subTitle
@@ -53,9 +53,11 @@ def create_profile_card(title, subTitle, description, imageUrl):
             )
     else:
         return (
-                '<div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
+                '<img src="'
+                + imageUrl
+                + '" style="width:285px;border-top-left-radius: 20px;border-top-right-radius: 20px;"><br><br><div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
                 + title
-                + '</b></div><br>'
+                + '</b></div>'
                 + description
                 + '<br>'
             )

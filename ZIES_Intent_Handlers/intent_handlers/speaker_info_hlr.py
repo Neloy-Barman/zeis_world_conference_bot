@@ -51,7 +51,7 @@ def handle_speaker(event):
                 buttons = create_buttons(speaker_options)
             else:
                 # Message
-                message = "Kindly visit <a href='https://ziesworld.in/'>here</a> to check with the speakers info."
+                message = "Kindly visit <a href='https://ziesworld.in/' target='_blank' rel='noopener noreferrer'>here</a> to check with the speakers info."
                 # Buttons
                 buttons = create_buttons(guided_buttons)
         else:

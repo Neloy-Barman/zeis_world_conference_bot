@@ -52,7 +52,7 @@ def handle_sponsor(event):
                 buttons = create_buttons(partner_options)
             else:
                 # Message
-                message = "Kindly visit <a href='https://ziesworld.in/'>here</a> to check with the sponsors info."
+                message = "Kindly visit <a href='https://ziesworld.in/' target='_blank' rel='noopener noreferrer'>here</a> to check with the sponsors info."
                 # Buttons
                 buttons = create_buttons(guided_buttons)
         else:

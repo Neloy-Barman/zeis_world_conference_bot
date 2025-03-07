@@ -51,7 +51,7 @@ def handle_guest_of_honour(event):
                 buttons = create_buttons(guest_options)
             else:
                 # Message
-                message = "Kindly visit <a href='https://ziesworld.in/'>here</a> to check with the guest of honours info."
+                message = "Kindly visit <a href='https://ziesworld.in/' target='_blank' rel='noopener noreferrer'>here</a> to check with the guest of honours info."
                 # Buttons
                 buttons = create_buttons(guided_buttons)
         else:
