@@ -35,3 +35,27 @@ def create_unordered_list_elems(items):
 
 def create_buttons(options): 
     return [{'text': f'{item}', 'value': f'{item}'} for item in options]
+
+
+def create_profile_card(title, subTitle, description, imageUrl):
+    
+    if subTitle:
+        return (
+                '<img src="'
+                + imageUrl
+                + '" style="width:285px;border-top-left-radius: 20px;border-top-right-radius: 20px;"><br><br> <div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
+                + title
+                + '</b><p style="font-size: 14px;color: #e1e1e1;margin-top: 5px;">'
+                + subTitle
+                + "</p></div>"
+                + description
+                + '<br>'
+            )
+    else:
+        return (
+                '<div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
+                + title
+                + '</b></div><br>'
+                + description
+                + '<br>'
+            )

@@ -1,6 +1,7 @@
 import pandas as pd
 from data.constants import guided_buttons
 from helpers.generic import create_buttons
+from helpers.generic import create_profile_card
 from helpers.generic import create_unordered_list_elems
 from helpers.lex_response import nextIntentWithResponseCard
 from helpers.information_retrieval import perform_fuzzywuzzy
@@ -72,13 +73,7 @@ def handle_sponsor(event):
             description = answer['desc']
 
             # Message
-            message = (
-                '<div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
-                + title
-                + '</b></div><br>'
-                + description
-                + '<br>'
-            )
+            message = create_profile_card(title, None, description, imageUrl)
 
             # Buttons
             buttons = create_buttons(guided_buttons)

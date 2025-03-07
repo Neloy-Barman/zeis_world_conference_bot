@@ -1,7 +1,10 @@
 import pandas as pd
 from data.constants import guided_buttons
 from helpers.generic import create_buttons
+from helpers.generic import create_profile_card
+from helpers.generic import create_unordered_list_elems
 from helpers.lex_response import nextIntentWithResponseCard
+from helpers.information_retrieval import perform_fuzzywuzzy
 
 def handle_guest_of_honour(event):
 
@@ -9,24 +12,55 @@ def handle_guest_of_honour(event):
     session_attributes = event["sessionAttributes"] if event["sessionAttributes"] is not None else {}
 
     # Reading CSV file
-    result = pd.read_csv("./data/guests.csv")
-    guests = result['guest'].to_list()
+    result = pd.read_csv("./data/events.csv")
 
     # Initial
     # Message
-    message = "The Guest of Honours for the <strong>AI Revolutionizing Education - Principal Conclave 2025</strong> are"
+    message = "Kindly select the event for which you want the guest of honour information"
     # Buttons
-    options = create_buttons(guests)
+    events = ['AI 360 Advanced Powered Learning', 'AI Revolutionizing Education']
+    buttons = [{'text': f'{item}', 'value': f'Guests of ​{item}​'} for item in events]
 
     # Fetching slot value
-    guest = event['currentIntent']['slots']['Guest']
+    slots = event['currentIntent']['slots']
+    guest = slots['Guest']
     print(f"Guest Name: {guest}")
 
-    # Guest is not None
-    if guest:
+    event = slots['event']
+    print(f"Event Name: {event}")
 
-       # Information Retrieval
-        answer = perform_fuzzywuzzy(
+    # Event is not None
+    if event:
+        # Information Retrieval
+        answer, _ = perform_fuzzywuzzy(
+            result = result,
+            slot = event,
+            column = 'event'
+        )
+
+        if answer is not None:
+            if answer == 0:
+                result = pd.read_csv("./data/guests.csv")
+                guest_options = result['guest'].to_list()
+                # Message
+                message = f"""
+                    The Guest of Honours for the <strong>{event}</strong> are
+                """
+                # Buttons
+                buttons = create_buttons(guest_options)
+            else:
+                # Message
+                message = "Kindly visit <a href='https://ziesworld.in/'>here</a> to check with the guest of honours info."
+                # Buttons
+                buttons = create_buttons(guided_buttons)
+        else:
+            message = "Do you wish to check with the honourale guests information of our organized events?"
+    elif guest:
+
+        result = pd.read_csv("./data/guests.csv")
+
+        # Information Retrieval
+        _, answer = perform_fuzzywuzzy(
             result = result,
             slot = guest,
             column = 'guest'
@@ -35,41 +69,27 @@ def handle_guest_of_honour(event):
         if answer is not None:
             title = answer['guest']
             subTitle = answer['designation']
+            imageUrl = answer['imageURL']
             description = answer['desc']
-            # imageUrl = info['image_url']
 
             # Message
-            message = (
-                # '<img src="'
-                # + imageUrl
-                # + '" style="width:285px;border-top-left-radius: 20px;border-top-right-radius: 20px;"><br><br> <div style="display:flex;align-items: center;flex-direction:column"> <b style="font-size: 20px;">'
-                # + title
-                title
-                + '</b><p style="font-size: 14px;color: #e1e1e1;margin-top: 5px;">'
-                + subTitle
-                + "</p></div>"
-                + description
-                + '<br>'
-            )
+            message = create_profile_card(title, subTitle, description, imageUrl)
 
-            # Options
-            options = create_buttons(guided_buttons)
-        
+            # Buttons
+            buttons = create_buttons(guided_buttons)
+
         else:
-            message = "Do you wish to check with our honourable guests list?"
-    
+            message = "Do you wish to check with the guest of honours of our organized events?"
     else:
-        message = "Click on the below buttons to find about the guest of honours"
+        message = "Click on the below buttons to find about the honourable guests information of our events"
 
 
-    print(f"Final message: {message}")
-    print(f"Final buttons: {buttons}")
-        
     return nextIntentWithResponseCard(
         session_attributes,
-        message,
-        None, 
-        None, 
+        message, 
+        None,
+        None,
         None,
         buttons
     )
+
