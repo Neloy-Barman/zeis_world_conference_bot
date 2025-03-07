@@ -1,4 +1,5 @@
 import pandas as pd
+from data.constants import all_events
 from data.constants import guided_buttons
 from helpers.generic import create_buttons
 from helpers.generic import create_profile_card
@@ -18,7 +19,7 @@ def handle_sponsor(event):
     # Message
     message = "Kindly select the event for which you want sponsor information"
     # Buttons
-    events = ['AI 360 Advanced Powered Learning', 'AI Revolutionizing Education']
+    events = all_events
     buttons = [{'text': f'{item}', 'value': f'Sponsors of ​{item}​'} for item in events]
 
     # Fetching slot value

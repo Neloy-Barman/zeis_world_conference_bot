@@ -1,4 +1,5 @@
 import pandas as pd
+from data.constants import all_events
 from data.constants import event_buttons
 from data.constants import guided_buttons
 from helpers.generic import create_buttons
@@ -19,7 +20,7 @@ def handle_event_info(event):
     # Message
     message = "Kindly select the event for which you want the information"
     # Buttons
-    events = ['AI 360 Advanced Powered Learning', 'AI Revolutionizing Education']
+    events = all_events
     buttons = create_buttons(events)
 
     # Fetching slot value

@@ -1,4 +1,5 @@
 import pandas as pd
+from data.constants import all_events
 from data.constants import guided_buttons
 from helpers.generic import create_buttons
 from helpers.lex_response import nextIntentWithResponseCard
@@ -16,7 +17,7 @@ def handle_location_timing(event):
     # Message
     message = "Kindly select the event for which you want location and timing information"
     # Buttons
-    events = ['AI 360 Advanced Powered Learning', 'AI Revolutionizing Education']
+    events = all_events
     buttons = [{'text': f'{item}', 'value': f'Venue and Schedule of ​{item}​'} for item in events]
 
     # Fetching slot value

@@ -5,4 +5,6 @@ all_buttons = ['AI 360 Advanced Powered Learning', 'AI Revolutionizing Education
 
 guided_buttons = ['Main Menu', 'About Us', 'Contact Us']
 
+all_events = ['AI 360 Advanced Powered Learning', 'AI Revolutionizing Education']
+
 event_buttons = ['Conference Info', 'Venue and Schedule', 'Speakers', 'Guests', 'Sponsors']

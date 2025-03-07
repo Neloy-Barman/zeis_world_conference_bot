@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Event_ZIES",
+    "version": "2",
+    "enumerationValues": [
+      {
+        "value": "ai 360"
+      },
+      {
+          "value": "360 powered learning"
+      },
+      {
+          "value": "360 powered conference"
+      },
+      {
+          "value": "AI 360 Advanced Powered Learning"
+      },
+      {
+          "value": "ai360"
+      },
+      {
+          "value": "360 learning"
+      },
+      {
+          "value": "360 powered"
+      },
+      {
+          "value": "ai powered learning"
+      },
+      {
+          "value": "ai-powered learning"
+      },
+      {
+          "value": "ai learning 360"
+      },
+      {
+          "value": "ai 36o"
+      },
+      {
+          "value": "ai 36oo"
+      },
+      {
+          "value": "ai 36"
+      },
+      {
+          "value": "powered learning ai"
+      },
+      {
+          "value": "advanced powered learning"
+      },
+      {
+          "value": "ai advanced learning"
+      },
+      {
+          "value": "ai learning conference"
+      },
+      {
+          "value": "learning ai 360"
+      },
+      {
+          "value": "360 ai learning"
+      },
+      {
+          "value": "ai learning 360 conference"
+      },
+      {
+          "value": "ai revolutionizing education"
+      },
+      {
+          "value": "revolutionizing education ai"
+      },
+      {
+          "value": "ai education conclave"
+      },
+      {
+          "value": "principal conclave"
+      },
+      {
+          "value": "ai principal conclave"
+      },
+      {
+          "value": "education principal conclave"
+      },
+      {
+          "value": "ai revolution education"
+      },
+      {
+          "value": "ai rev education"
+      },
+      {
+          "value": "ai rev ed"
+      },
+      {
+          "value": "ai rev ed conclave"
+      },
+      {
+          "value": "ai rev edu"
+      },
+      {
+          "value": "ai revolutiing education"
+      },
+      {
+          "value": "ai revolting education"
+      },
+      {
+          "value": "ai revolutin education"
+      },
+      {
+          "value": "ai revlution education"
+      },
+      {
+          "value": "ai revoluation education"
+      },
+      {
+          "value": "ai revolutionize education"
+      },
+      {
+          "value": "ai revolutionise education"
+      },
+      {
+          "value": "ai revolutionising education"
+      },
+      {
+          "value": "ai revolutionizing ed"
+      },
+      {
+          "value": "ai revolution conclave"
+      },
+      {
+          "value": "ai revolution in education"
+      },
+      {
+          "value": "ai revolution education conclave"
+      },
+      {
+          "value": "principal ai conclave"
+      },
+      {
+          "value": "ai principals conclave"
+      },
+      {
+          "value": "principals ai conclave"
+      },
+      {
+          "value": "ai principal conference"
+      },
+      {
+          "value": "principal conference ai"
+      },
+      {
+          "value": "principal education conclave"
+      },
+      {
+          "value": "ai revolution principal conclave"
+      }
+    ],
+    "valueSelectionStrategy": "ORIGINAL_VALUE"
+  }
+}
